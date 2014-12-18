@@ -58,7 +58,7 @@ class bistu extends AWS_CONTROLLER
 		
 		if ($bistu_profile['error'])
 		{
-			H::redirect_msg(AWS_APP::lang()->_t('与微博通信出错, 错误代码: %s', $bistu_profile['error']), "/account/setting/openid/");
+			H::redirect_msg(AWS_APP::lang()->_t('与 Bistu 通信出错, 错误代码: %s', $bistu_profile['error']), "/account/setting/openid/");
 		}
 		
 		if (!$this->model('integral')->fetch_log($this->user_id, 'BIND_OPENID'))

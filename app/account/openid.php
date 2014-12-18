@@ -743,7 +743,7 @@ class openid extends AWS_CONTROLLER
 					H::redirect_msg(AWS_APP::lang()->_t('与 Bistu 通信出错, 错误代码: %s', $bistu_profile['error']), '/account/login/');
 				}
 
-				AWS_APP::session()->bistu_profile = $bistu_profile[0];
+				AWS_APP::session()->bistu_profile = $bistu_profile;
 			}
 			
 			if (! AWS_APP::session()->bistu_profile)

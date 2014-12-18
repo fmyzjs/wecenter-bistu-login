@@ -283,15 +283,8 @@ class ifLabTOAuthV2 {
 	 */
 	function get($url, $parameters = array()) {
 
-		//此处判断因奇葩Bistu Api
-
-		if ($url == 'https://222.249.250.89:8443/m/userinfo.htm'){
-			$response = urldecode($this->oAuthRequest($url, 'GET', $parameters));
-		}
-
-		else {
-			$response = $this->oAuthRequest($url, 'GET', $parameters);
-		}
+		$response = $this->oAuthRequest($url, 'GET', $parameters);
+		
 		if ($this->format === 'json' && $this->decode_json) {
 			return json_decode($response, true);
 		}
